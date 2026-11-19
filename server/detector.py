@@ -1,0 +1,4 @@
+from phone_detector import detect_phone_num
+from rrn_detector import detect_rrn
+from email_detector import detect_email
+from api_key_detector import detect_api_key

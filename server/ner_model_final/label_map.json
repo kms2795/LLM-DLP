@@ -1,0 +1,1 @@
+{"id2label": {"0": "O", "1": "B-PER", "2": "I-PER", "3": "B-PHONE", "4": "I-PHONE", "5": "B-EMAIL", "6": "I-EMAIL", "7": "B-RRN", "8": "I-RRN", "9": "B-ADDR", "10": "I-ADDR"}, "label2id": {"O": 0, "B-PER": 1, "I-PER": 2, "B-PHONE": 3, "I-PHONE": 4, "B-EMAIL": 5, "I-EMAIL": 6, "B-RRN": 7, "I-RRN": 8, "B-ADDR": 9, "I-ADDR": 10}}

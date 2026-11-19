@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AI DLP Guard",
+  "version": "0.6",
+  "description": "생성형 AI로 보내기 전에 한국어 개인정보를 탐지하고 가립니다",
+  "permissions": ["storage"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI DLP Guard"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

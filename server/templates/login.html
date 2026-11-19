@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI DLP Guard 로그인</title>
+<style>
+  :root { --navy:#13203A; --paper:#FDFCF9; --line:#DCDFE5; --muted:#5B6577; --accent:#A8500E; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex;
+    align-items: center; justify-content: center;
+    background: #F2F4F7; color: #3F4A5C;
+    font: 15px/1.5 system-ui, -apple-system, "Malgun Gothic", sans-serif;
+  }
+  .card {
+    width: min(380px, 92vw); background: var(--paper);
+    border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px 34px; box-shadow: 0 10px 34px rgba(0,0,0,.08);
+  }
+  h1 { margin: 0 0 4px; font-size: 22px; color: var(--navy); }
+  p.sub { margin: 0 0 26px; font-size: 13px; color: var(--muted); }
+  label { display: block; margin-bottom: 14px; }
+  label span { display: block; margin-bottom: 5px; font-size: 13px; color: var(--muted); }
+  input {
+    width: 100%; padding: 11px 12px; border: 1px solid var(--line);
+    border-radius: 8px; font: 15px system-ui, "Malgun Gothic", sans-serif;
+  }
+  button {
+    width: 100%; margin-top: 8px; padding: 12px; border: none; border-radius: 8px;
+    background: var(--navy); color: var(--paper); cursor: pointer;
+    font: 600 15px system-ui, "Malgun Gothic", sans-serif;
+  }
+  .error {
+    margin: 14px 0 0; font-size: 13px; color: var(--accent);
+  }
+</style>
+</head>
+<body>
+  <form class="card" method="post" action="/dashboard/login">
+    <h1>AI DLP Guard</h1>
+    <p class="sub">탐지 로그 대시보드</p>
+
+    <label>
+      <span>아이디</span>
+      <input type="text" name="username" autocomplete="username" autofocus>
+    </label>
+    <label>
+      <span>비밀번호</span>
+      <input type="password" name="password" autocomplete="current-password">
+    </label>
+
+    <button type="submit">로그인</button>
+
+    {% if error %}
+      <p class="error">아이디 또는 비밀번호가 올바르지 않습니다</p>
+    {% endif %}
+  </form>
+</body>
+</html>
